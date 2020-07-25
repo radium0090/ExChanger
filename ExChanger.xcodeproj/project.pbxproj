@@ -23,6 +23,8 @@
 		8C53D5A324CBED4500D3395C /* ConvertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53D5A224CBED4500D3395C /* ConvertViewModel.swift */; };
 		8C53D5A524CBED6300D3395C /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53D5A424CBED6300D3395C /* HistoryViewModel.swift */; };
 		8C53D5A724CBED7900D3395C /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53D5A624CBED7900D3395C /* CurrencyListViewModel.swift */; };
+		8CF7E4C924CC923B007FAACB /* CurrenciesConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7E4C824CC923B007FAACB /* CurrenciesConvertViewController.swift */; };
+		8CF7E4CC24CC99BD007FAACB /* CurrencieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7E4CB24CC99BD007FAACB /* CurrencieTableViewCell.swift */; };
 		A88E29A4DF8C8E74D279A5DF /* Pods_ExChanger_ExChangerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D35618DB2820B3746B66446 /* Pods_ExChanger_ExChangerUITests.framework */; };
 		EEA9F09A24CC73A000958C14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA9F09924CC73A000958C14 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,8 @@
 		8C53D5A424CBED6300D3395C /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		8C53D5A624CBED7900D3395C /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
 		8C7D48BCBAF69DBD3450AA3A /* Pods-ExChanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExChanger.release.xcconfig"; path = "Target Support Files/Pods-ExChanger/Pods-ExChanger.release.xcconfig"; sourceTree = "<group>"; };
+		8CF7E4C824CC923B007FAACB /* CurrenciesConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesConvertViewController.swift; sourceTree = "<group>"; };
+		8CF7E4CB24CC99BD007FAACB /* CurrencieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencieTableViewCell.swift; sourceTree = "<group>"; };
 		C4E68AFAC0ED87D2DA182A13 /* Pods-ExChanger-ExChangerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExChanger-ExChangerUITests.debug.xcconfig"; path = "Target Support Files/Pods-ExChanger-ExChangerUITests/Pods-ExChanger-ExChangerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C52DF567D6F669BBA255F82C /* Pods-ExChangerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExChangerTests.debug.xcconfig"; path = "Target Support Files/Pods-ExChangerTests/Pods-ExChangerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD87D1E573D5DF0345820B95 /* Pods_ExChanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExChanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +265,7 @@
 		8C53D59A24CBE4EF00D3395C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8CF7E4CA24CC990A007FAACB /* CurrenciesConvert */,
 				8C53D59C24CBEC6500D3395C /* ConvertViewController.swift */,
 				8C53D59E24CBECD400D3395C /* HistoryViewController.swift */,
 				8C53D5A024CBED1200D3395C /* CurrencyListViewController.swift */,
@@ -275,6 +280,15 @@
 				8C53D56C24CBDF5F00D3395C /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		8CF7E4CA24CC990A007FAACB /* CurrenciesConvert */ = {
+			isa = PBXGroup;
+			children = (
+				8CF7E4C824CC923B007FAACB /* CurrenciesConvertViewController.swift */,
+				8CF7E4CB24CC99BD007FAACB /* CurrencieTableViewCell.swift */,
+			);
+			path = CurrenciesConvert;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -520,7 +534,9 @@
 				8C53D55D24CBDF5D00D3395C /* AppDelegate.swift in Sources */,
 				8C53D56924CBDF5D00D3395C /* ExChanger.xcdatamodeld in Sources */,
 				8C53D59D24CBEC6500D3395C /* ConvertViewController.swift in Sources */,
+				8CF7E4C924CC923B007FAACB /* CurrenciesConvertViewController.swift in Sources */,
 				8C53D59F24CBECD400D3395C /* HistoryViewController.swift in Sources */,
+				8CF7E4CC24CC99BD007FAACB /* CurrencieTableViewCell.swift in Sources */,
 				8C53D5A124CBED1200D3395C /* CurrencyListViewController.swift in Sources */,
 				8C53D5A324CBED4500D3395C /* ConvertViewModel.swift in Sources */,
 				8C53D55F24CBDF5D00D3395C /* SceneDelegate.swift in Sources */,
