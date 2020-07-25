@@ -269,14 +269,52 @@
                     <view key="view" contentMode="scaleToFill" id="ekM-iv-yZM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SHC-pZ-KR6">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="8v0-cK-I3X">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8v0-cK-I3X" id="oak-3M-bUk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpB-NU-MXY">
+                                                    <rect key="frame" x="20" y="11" width="195" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1i-Kt-JH0">
+                                                    <rect key="frame" x="223" y="11" width="169" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SHC-pZ-KR6" firstAttribute="leading" secondItem="zHA-Ui-W3n" secondAttribute="leading" id="AKj-6p-0xe"/>
+                            <constraint firstItem="zHA-Ui-W3n" firstAttribute="bottom" secondItem="SHC-pZ-KR6" secondAttribute="bottom" id="Gs1-hH-SiQ"/>
+                            <constraint firstItem="SHC-pZ-KR6" firstAttribute="top" secondItem="zHA-Ui-W3n" secondAttribute="top" id="k9L-oz-8F6"/>
+                            <constraint firstItem="zHA-Ui-W3n" firstAttribute="trailing" secondItem="SHC-pZ-KR6" secondAttribute="trailing" id="yac-AA-LTe"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zHA-Ui-W3n"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Currency List" image="list.bullet" catalog="system" id="Aj3-Yv-BkD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9P-aY-xNw" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-313" y="697"/>
+            <point key="canvasLocation" x="-313.04347826086956" y="696.42857142857144"/>
         </scene>
     </scenes>
     <resources>
