@@ -8,10 +8,42 @@
 
 import Foundation
 import UIKit
+import CoreData
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: UIViewController, UITableViewDelegate {
+    var context: NSManagedObjectContext!
+    var managedObject: ExChanger!
+    @IBOutlet weak var historyTableView: UITableView!
+    let viewModel = HistoryViewModel()
     
     override func viewDidLoad() {
-        
+        super.viewDidLoad()
+        initTable()
+        bindViewModel()
     }
+    
+    func initTable() {
+        historyTableView.register(HistoryTableViewCell.nib, forCellReuseIdentifier: HistoryTableViewCell.identifier)
+        historyTableView.backgroundColor = .white
+    
+        historyTableView.estimatedRowHeight = 150
+        historyTableView.rowHeight = UITableView.automaticDimension
+    }
+    
+    func bindViewModel() {
+        historyTableView.delegate = viewModel
+        historyTableView.dataSource = viewModel
+        historyTableView.reloadData()
+    }
+    
+    func removeHistory() {
+        context.delete(managedObject)
+        do {
+            try context.save()
+        } catch _ {
+            fatalError()
+        }
+    }
+   
+    
 }
