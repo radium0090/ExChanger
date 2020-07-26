@@ -30,6 +30,5 @@ class ConvertViewController: UIViewController {
         ] as [String : Any]
         _ = HistoryModel(dictionary: dict as [String : AnyObject], context: sharedContext)
         appDel.saveContext()
-        print("save contents.............")
     }
 }

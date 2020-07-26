@@ -12,7 +12,6 @@ import CoreData
 
 class HistoryViewController: UIViewController, UITableViewDelegate {
     var context: NSManagedObjectContext!
-    var managedObject: ExChanger!
     @IBOutlet weak var historyTableView: UITableView!
     let viewModel = HistoryViewModel()
     
@@ -34,15 +33,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate {
         historyTableView.delegate = viewModel
         historyTableView.dataSource = viewModel
         historyTableView.reloadData()
-    }
-    
-    func removeHistory() {
-        context.delete(managedObject)
-        do {
-            try context.save()
-        } catch _ {
-            fatalError()
-        }
     }
    
     
