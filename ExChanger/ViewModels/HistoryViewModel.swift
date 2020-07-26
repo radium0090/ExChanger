@@ -8,36 +8,43 @@
 
 import Foundation
 import UIKit
+import RxDataSources
+import RxSwift
 import CoreData
 
-
-class HistoryViewModel: NSObject, UITableViewDelegate, UITableViewDataSource {
-    var fetchedConversions: [HistoryModel]!
+class HistoryViewModel {
+    let items = PublishSubject<[SectionOfConversion]>()
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if fetchedConversions == nil {
-            return 0
-        }
-        return fetchedConversions.count
+    func updateItem() {
+        var sections: [SectionOfConversion] = []
+        // test dummy data
+        sections.append(SectionOfConversion(header: "Conversion History",
+                                            items: [SectionOfConversion.Item(dateTime: Date(),
+                                                                             baseKeyName:"USD",
+                                                                             baseValue: 1.23,
+                                                                             targetKeyName:"JPY",
+                                                                             targetValue:8.5),
+                                                    SectionOfConversion.Item(dateTime: Date(),
+                                                                             baseKeyName:"USD",
+                                                                             baseValue: 7.98,
+                                                                             targetKeyName:"JPY",
+                                                                             targetValue:56.87)
+        ]))
+        
+        items.onNext(sections)
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "historycell") as! HistoryTableViewCell
-        cell.setCell(dt: fetchedConversions[indexPath.row].dateTime,
-                     bk: fetchedConversions[indexPath.row].baseKeyName,
-                     bv: fetchedConversions[indexPath.row].baseValue,
-                     tk: fetchedConversions[indexPath.row].targetKeyName,
-                     tv: fetchedConversions[indexPath.row].targetValue)
-        return cell
-    }
-    
-    func fetchAllConversions() -> [HistoryModel] {
+    // TODO:
+    func fetchAllHistory() -> [Conversion] {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         do {
             // CoreDataからデータをfetch
-            let fetchRequest: NSFetchRequest<ExChanger> = ExChanger.fetchRequest()
-            let res = try context.fetch(fetchRequest) as! [HistoryModel]
-            return res
+//            let fetchRequest: NSFetchRequest<ConversionModel> = ExChanger.fetchRequest()
+//            let res = try context.fetch(fetchRequest) as! [Conversion]
+//            return res
+//            get data frm coredata
+//            ...
+            return []
         } catch {
             print("Error")
             fatalError()

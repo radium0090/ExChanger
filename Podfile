@@ -16,6 +16,7 @@ target 'ExChanger' do
   # RxSwift
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxDataSources'
 
   # Pods for ExChanger
 
