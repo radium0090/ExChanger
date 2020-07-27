@@ -1,11 +1,3 @@
-//
-//  HistoryViewModel.swift
-//  ExChanger
-//
-//  Created by Sabbir Ahmed on 25/7/20.
-//  Copyright © 2020 Grey Matter. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import RxDataSources
@@ -15,6 +7,7 @@ import CoreData
 class HistoryViewModel {
     let items = PublishSubject<[SectionOfConversion]>()
     
+    // set and update data to tableView
     func updateItem() {
         var sections: [SectionOfConversion] = []
         // test dummy data

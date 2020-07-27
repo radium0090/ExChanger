@@ -1,11 +1,3 @@
-//
-//  HistoryViewController.swift
-//  ExChanger
-//
-//  Created by Sabbir Ahmed on 25/7/20.
-//  Copyright © 2020 Grey Matter. All rights reserved.
-//
-
 import Foundation
 import UIKit
 import CoreData
@@ -14,10 +6,11 @@ import RxDataSources
 
 
 class HistoryViewController: UIViewController, UITableViewDelegate {
-    // bound with ViewModel
+    
     @IBOutlet weak var historyTableView: UITableView!
     private var viewModel: HistoryViewModel!
     private var disposeBag = DisposeBag()
+    // load with rxdatasource
     private lazy var dataSource = RxTableViewSectionedReloadDataSource<SectionOfConversion>(configureCell: configureCell, titleForHeaderInSection: titleForHeaderInSection)
     private lazy var configureCell: RxTableViewSectionedReloadDataSource<SectionOfConversion>.ConfigureCell = { [weak self] (dataSource, tableView, indexPath, conversion) in
         let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identifier, for: indexPath) as! HistoryTableViewCell
@@ -49,7 +42,7 @@ extension HistoryViewController {
     
     // tableview setup
     private func setupTableView() {
-        historyTableView.estimatedRowHeight = 180
+        historyTableView.estimatedRowHeight = 150
         historyTableView.rowHeight = UITableView.automaticDimension
         historyTableView.register(HistoryTableViewCell.nib, forCellReuseIdentifier: HistoryTableViewCell.identifier)
         historyTableView.rx.setDelegate(self).disposed(by: disposeBag)

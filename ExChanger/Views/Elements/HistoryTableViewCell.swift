@@ -1,11 +1,3 @@
-//
-//  HistoryTableViewCell.swift
-//  ExChanger
-//
-//  Created by 皮皮 on 2020/07/26.
-//  Copyright © 2020 Grey Matter. All rights reserved.
-//
-
 import UIKit
 
 class HistoryTableViewCell: UITableViewCell {
@@ -18,7 +10,7 @@ class HistoryTableViewCell: UITableViewCell {
     
     func setCell(dt: Date, bk: String, bv: Float, tk: String, tv: Float) {
         imgView?.image = UIImage(named: "convertImg")
-        dateTime.text = dateAsString(dt)
+        dateTime.text = ExchangerUtil.sharedInstance().dateAsString(dt)
         baseKeyName.text = bk
         baseValue.text = String(describing: bv)
         targetKeyName.text = tk
@@ -48,18 +40,11 @@ class HistoryTableViewCell: UITableViewCell {
         super.prepareForReuse()
         
         imgView?.image = UIImage(named: "convertImg")
-        dateTime.text = dateAsString(Date())
+        dateTime.text = ExchangerUtil.sharedInstance().dateAsString(Date())
         baseKeyName.text = ""
         baseValue.text = String(describing: 0.00)
         targetKeyName.text = ""
         targetValue.text = String(describing: 0.00)
-    }
-    
-    func dateAsString(_ date: Date, dateFormat: String = "yyyy-MM-dd HH:mm:ss") -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = dateFormat
-        let date = formatter.string(from: date)
-        return date
     }
     
 }
