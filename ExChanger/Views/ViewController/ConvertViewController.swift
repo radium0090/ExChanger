@@ -159,6 +159,22 @@ class ConvertViewController: UIViewController {
         inputAmountFirst.text = convertViewModel.currencyValue[0]
         inputAmountSecond.text = convertViewModel.currencyValue[1]
     }
+  
+  func saveConversion(dt: Date, bk: String, bv: Float, tk: String, tv: Float) {
+        let sharedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let appDel = (UIApplication.shared.delegate as! AppDelegate)
+        //インスタンス化をする
+        let dict = [
+            "dateTime": dt,
+            "baseKeyName": bk,
+            "baseValue": bv,
+            "targetKeyName": tk,
+            "targetValue": tv
+        ] as [String : Any]
+        _ = HistoryModel(dictionary: dict as [String : AnyObject], context: sharedContext)
+        appDel.saveContext()
+        print("save contents.............")
+    }
 }
 
 extension ConvertViewController: CurrenciesConvertDelegate {

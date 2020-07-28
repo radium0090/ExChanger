@@ -287,21 +287,39 @@
             </objects>
             <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
         </scene>
-        <!--History-->
+        <!--History View Controller-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
                 <viewController id="8rJ-Kc-sve" customClass="HistoryViewController" customModule="ExChanger" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G1E-n9-YQQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="G1E-n9-YQQ" secondAttribute="height" multiplier="414:725" id="0hn-PC-kWC"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="G1E-n9-YQQ" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="6ks-Jj-HaX"/>
+                            <constraint firstItem="G1E-n9-YQQ" firstAttribute="bottom" secondItem="O1u-W8-tvY" secondAttribute="bottom" id="bj3-oX-VMK"/>
+                            <constraint firstItem="G1E-n9-YQQ" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="p4P-bT-Dfs"/>
+                            <constraint firstItem="G1E-n9-YQQ" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="pzC-VD-zA1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="History" image="calendar" catalog="system" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" id="z21-vf-eQt"/>
+                    <connections>
+                        <outlet property="historyTableView" destination="G1E-n9-YQQ" id="C7w-qr-CCB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="354"/>
+            <point key="canvasLocation" x="1657.9710144927537" y="353.57142857142856"/>
         </scene>
         <!--Currency List View Controller-->
         <scene sceneID="stR-Wj-AoM">
@@ -373,7 +391,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="rEn-Lu-UX9" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="rD8-dt-Jg6" kind="relationship" relationship="viewControllers" id="1Xx-ZH-MKv"/>
                     </connections>
                 </tabBarController>
@@ -468,6 +486,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9P-aY-xNw" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-313.04347826086956" y="696.42857142857144"/>
+        </scene>
+        <!--History-->
+        <scene sceneID="w5y-Rt-ffn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rEn-Lu-UX9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="History" image="calendar" catalog="system" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jxw-d0-ZJh">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="Dcm-zF-a3W"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgY-q9-Bht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="747.82608695652175" y="353.57142857142856"/>
         </scene>
     </scenes>
     <resources>
