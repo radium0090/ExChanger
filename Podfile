@@ -8,11 +8,6 @@ target 'ExChanger' do
   # Firebase
   pod 'Firebase/Analytics'
 
-  # API
-  pod 'Alamofire'
-  pod 'AlamofireObjectMapper'
-  pod 'SwiftyJSON'
-
   # RxSwift
   pod 'RxSwift'
   pod 'RxCocoa'
