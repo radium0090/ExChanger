@@ -163,6 +163,7 @@ class ConvertViewController: UIViewController {
 
 extension ConvertViewController: CurrenciesConvertDelegate {
     func source(value: String) {
+        
         convertViewModel.currencyName[convertViewModel.currencyTag] = value
         
         for index in 0...1 {
