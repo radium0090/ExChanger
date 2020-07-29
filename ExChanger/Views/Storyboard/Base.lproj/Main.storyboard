@@ -294,10 +294,25 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eDK-Fz-jeo">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eDK-Fz-jeo" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="7sV-91-AWr"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="eDK-Fz-jeo" secondAttribute="bottom" id="Q7k-4D-zMV"/>
+                            <constraint firstItem="O1u-W8-tvY" firstAttribute="trailing" secondItem="eDK-Fz-jeo" secondAttribute="trailing" id="ZKW-cR-Mms"/>
+                            <constraint firstItem="eDK-Fz-jeo" firstAttribute="leading" secondItem="O1u-W8-tvY" secondAttribute="leading" id="qm2-BB-gIY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="calendar" catalog="system" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="tableView" destination="eDK-Fz-jeo" id="ps4-yC-P7z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
