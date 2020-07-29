@@ -33,10 +33,11 @@
 		8C53D5A524CBED6300D3395C /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53D5A424CBED6300D3395C /* HistoryViewModel.swift */; };
 		8C53D5A724CBED7900D3395C /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53D5A624CBED7900D3395C /* CurrencyListViewModel.swift */; };
 		8C55D1B924D093FF008D40F0 /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C55D1B824D093FF008D40F0 /* Convert.swift */; };
+		8CA5B3F124D1DFC0009210D2 /* SectionOfConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5B3F024D1DFC0009210D2 /* SectionOfConversion.swift */; };
+		8CA5B3F324D1E4BF009210D2 /* CoreDataClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5B3F224D1E4BF009210D2 /* CoreDataClient.swift */; };
 		8CCAAADE24D17A2000334754 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCAAADC24D17A1F00334754 /* HistoryTableViewCell.swift */; };
 		8CCAAADF24D17A2000334754 /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CCAAADD24D17A2000334754 /* HistoryTableViewCell.xib */; };
 		8CCAAAE124D17A5600334754 /* ExchangerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCAAAE024D17A5600334754 /* ExchangerUtil.swift */; };
-		8CCAAAE324D17A6400334754 /* ConversionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCAAAE224D17A6400334754 /* ConversionModel.swift */; };
 		8CF3B27824CD304D00C4390E /* CurrencyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF3B27724CD304D00C4390E /* CurrencyListTableViewCell.swift */; };
 		8CF7E4C924CC923B007FAACB /* CurrenciesConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7E4C824CC923B007FAACB /* CurrenciesConvertViewController.swift */; };
 		8CF7E4CC24CC99BD007FAACB /* CurrenciesVonvertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7E4CB24CC99BD007FAACB /* CurrenciesVonvertTableViewCell.swift */; };
@@ -99,10 +100,11 @@
 		8C53D5A624CBED7900D3395C /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
 		8C55D1B824D093FF008D40F0 /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
 		8C7D48BCBAF69DBD3450AA3A /* Pods-ExChanger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExChanger.release.xcconfig"; path = "Target Support Files/Pods-ExChanger/Pods-ExChanger.release.xcconfig"; sourceTree = "<group>"; };
+		8CA5B3F024D1DFC0009210D2 /* SectionOfConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionOfConversion.swift; sourceTree = "<group>"; };
+		8CA5B3F224D1E4BF009210D2 /* CoreDataClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataClient.swift; sourceTree = "<group>"; };
 		8CCAAADC24D17A1F00334754 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		8CCAAADD24D17A2000334754 /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
 		8CCAAAE024D17A5600334754 /* ExchangerUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangerUtil.swift; sourceTree = "<group>"; };
-		8CCAAAE224D17A6400334754 /* ConversionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversionModel.swift; sourceTree = "<group>"; };
 		8CF3B27724CD304D00C4390E /* CurrencyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListTableViewCell.swift; sourceTree = "<group>"; };
 		8CF7E4C824CC923B007FAACB /* CurrenciesConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesConvertViewController.swift; sourceTree = "<group>"; };
 		8CF7E4CB24CC99BD007FAACB /* CurrenciesVonvertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesVonvertTableViewCell.swift; sourceTree = "<group>"; };
@@ -226,10 +228,10 @@
 		8C53D59124CBE30400D3395C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8CCAAAE224D17A6400334754 /* ConversionModel.swift */,
 				8C4C7F6324CD98F10011DAD1 /* Currencies.swift */,
 				8C52A4AB24CE950400E36B13 /* Quotes.swift */,
 				8C55D1B824D093FF008D40F0 /* Convert.swift */,
+				8CA5B3F024D1DFC0009210D2 /* SectionOfConversion.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				8C53D56724CBDF5D00D3395C /* ExChanger.xcdatamodeld */,
+				8CA5B3F224D1E4BF009210D2 /* CoreDataClient.swift */,
 			);
 			path = LocalStorage;
 			sourceTree = "<group>";
@@ -611,11 +614,12 @@
 				8C4C7F5E24CD91280011DAD1 /* IndicatorView.swift in Sources */,
 				8CF7E4C924CC923B007FAACB /* CurrenciesConvertViewController.swift in Sources */,
 				8CF3B27824CD304D00C4390E /* CurrencyListTableViewCell.swift in Sources */,
+				8CA5B3F324D1E4BF009210D2 /* CoreDataClient.swift in Sources */,
 				8C4C7F6024CD91530011DAD1 /* UserDefaults+Extension.swift in Sources */,
 				8C52A4AA24CE90A200E36B13 /* CurrenciesViewModel.swift in Sources */,
 				8CCAAADE24D17A2000334754 /* HistoryTableViewCell.swift in Sources */,
 				8CCAAAE124D17A5600334754 /* ExchangerUtil.swift in Sources */,
-				8CCAAAE324D17A6400334754 /* ConversionModel.swift in Sources */,
+				8CA5B3F124D1DFC0009210D2 /* SectionOfConversion.swift in Sources */,
 				8C4C7F6624CDA8E70011DAD1 /* CurrencylayerAPIClient.swift in Sources */,
 				8C4C7F6224CD915A0011DAD1 /* UserDefaultsKeys.swift in Sources */,
 				8C53D59F24CBECD400D3395C /* HistoryViewController.swift in Sources */,
@@ -813,7 +817,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = greymatter.co.bd.ExChanger;
+				PRODUCT_BUNDLE_IDENTIFIER = me.inkchat.exchanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -836,7 +840,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = greymatter.co.bd.ExChanger;
+				PRODUCT_BUNDLE_IDENTIFIER = me.inkchat.exchanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
