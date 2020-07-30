@@ -33,6 +33,10 @@ class HistoryViewController: UIViewController {
         setupViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.updateItem()
+    }
 }
 
 extension HistoryViewController {
@@ -54,7 +58,6 @@ extension HistoryViewController {
         viewModel.items
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
-        viewModel.updateItem()
     }
 }
 
