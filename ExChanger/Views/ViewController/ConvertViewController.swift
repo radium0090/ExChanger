@@ -138,7 +138,7 @@ class ConvertViewController: UIViewController {
         
         if inputAmountFirst.tag == convertViewModel.inputValueTag {
             inputAmountFirst.textColor = UIColor.black
-            inputAmountFirst.font = UIFont.systemFont(ofSize: 44)
+            inputAmountFirst.font = UIFont.systemFont(ofSize: 48)
         } else {
             inputAmountFirst.textColor = UIColor.gray
             inputAmountFirst.font = UIFont.systemFont(ofSize: 36)
@@ -146,7 +146,7 @@ class ConvertViewController: UIViewController {
         
         if inputAmountSecond.tag == convertViewModel.inputValueTag {
             inputAmountSecond.textColor = UIColor.black
-            inputAmountSecond.font = UIFont.systemFont(ofSize: 44)
+            inputAmountSecond.font = UIFont.systemFont(ofSize: 48)
         } else {
             inputAmountSecond.textColor = UIColor.gray
             inputAmountSecond.font = UIFont.systemFont(ofSize: 36)
