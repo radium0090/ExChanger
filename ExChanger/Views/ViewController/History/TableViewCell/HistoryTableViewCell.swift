@@ -8,8 +8,7 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var targetValue: UILabel!
     @IBOutlet weak var imgView: UIImageView!
     
-    func setCell(dt: Date, bk: String, bv: Float, tk: String, tv: Float) {
-        imgView?.image = UIImage(named: "convertImg")
+    func setCell(dt: Date, bk: String, bv: Double, tk: String, tv: Double) {
         dateTime.text = ExchangerUtil.sharedInstance().dateAsString(dt)
         baseKeyName.text = bk
         baseValue.text = String(describing: bv)
@@ -38,8 +37,6 @@ class HistoryTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        
-        imgView?.image = UIImage(named: "convertImg")
         dateTime.text = ExchangerUtil.sharedInstance().dateAsString(Date())
         baseKeyName.text = ""
         baseValue.text = String(describing: 0.00)

@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import CoreData
 
 class ConvertViewModel {
     
@@ -43,6 +44,13 @@ class ConvertViewModel {
                             self.currencyValue[0] = String(conertValue.result)
                         }
                         self.convert = conertValue
+                        DispatchQueue.main.async {
+                            CoreDataClient.shared.createConvertion(dateTime: Date(timeIntervalSince1970: TimeInterval(conertValue.info.timestamp)),
+                                                                    baseKeyName: conertValue.query.from,
+                                                                    baseValue: conertValue.query.amount,
+                                                                    targetKeyName: conertValue.query.to,
+                                                                    targetValue: conertValue.result)
+                        }
                         observable.onNext(true)
                     } else {
                         observable.onNext(false)

@@ -5,19 +5,20 @@ import RxSwift
 import RxDataSources
 
 
-class HistoryViewController: UIViewController, UITableViewDelegate {
+class HistoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     private var viewModel: HistoryViewModel!
     private var disposeBag = DisposeBag()
+    
     // load with rxdatasource
     private lazy var dataSource = RxTableViewSectionedReloadDataSource<SectionOfConversion>(configureCell: configureCell, titleForHeaderInSection: titleForHeaderInSection)
     private lazy var configureCell: RxTableViewSectionedReloadDataSource<SectionOfConversion>.ConfigureCell = { [weak self] (dataSource, tableView, indexPath, conversion) in
         let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identifier, for: indexPath) as! HistoryTableViewCell
-        cell.setCell(dt: conversion.dateTime,
-                     bk: conversion.baseKeyName,
+        cell.setCell(dt: conversion.dateTime!,
+                     bk: conversion.baseKeyName!,
                      bv: conversion.baseValue,
-                     tk: conversion.targetKeyName,
+                     tk: conversion.targetKeyName!,
                      tv: conversion.targetValue)
         return cell
     }
@@ -31,7 +32,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate {
         setupTableView()
         setupViewModel()
     }
-
+    
 }
 
 extension HistoryViewController {
@@ -42,7 +43,6 @@ extension HistoryViewController {
     
     // tableview setup
     private func setupTableView() {
-        tableView.estimatedRowHeight = 150
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(HistoryTableViewCell.nib, forCellReuseIdentifier: HistoryTableViewCell.identifier)
         tableView.rx.setDelegate(self).disposed(by: disposeBag)
@@ -55,5 +55,11 @@ extension HistoryViewController {
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         viewModel.updateItem()
+    }
+}
+
+extension HistoryViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0
     }
 }

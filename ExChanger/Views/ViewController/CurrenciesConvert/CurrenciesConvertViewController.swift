@@ -55,6 +55,7 @@ class CurrenciesConvertViewController: UIViewController {
             })
         .disposed(by: disposeBag)
     }
+
 }
 
 extension CurrenciesConvertViewController: UITableViewDataSource, UITableViewDelegate {
