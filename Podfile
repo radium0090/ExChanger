@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '10.0'
+platform :ios, '10.0'
 
 target 'ExChanger' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -15,13 +15,13 @@ target 'ExChanger' do
 
   # Pods for ExChanger
 
-  target 'ExChangerTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  # target 'ExChangerTests' do
+  #   inherit! :search_paths
+  #   # Pods for testing
+  # end
 
-  target 'ExChangerUITests' do
-    # Pods for testing
-  end
+  # target 'ExChangerUITests' do
+  #   # Pods for testing
+  # end
 
 end
