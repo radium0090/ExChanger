@@ -8,24 +8,20 @@ target 'ExChanger' do
   # Firebase
   pod 'Firebase/Analytics'
 
-  # API
-  pod 'Alamofire'
-  pod 'AlamofireObjectMapper'
-  pod 'SwiftyJSON'
-
   # RxSwift
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'RxDataSources'
 
   # Pods for ExChanger
 
-  target 'ExChangerTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  # target 'ExChangerTests' do
+  #   inherit! :search_paths
+  #   # Pods for testing
+  # end
 
-  target 'ExChangerUITests' do
-    # Pods for testing
-  end
+  # target 'ExChangerUITests' do
+  #   # Pods for testing
+  # end
 
 end
