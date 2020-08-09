@@ -29,7 +29,7 @@ class CurrencylayerAPIClien {
                 URLQueryItem(name: "format", value: "1")
             ]
             
-            print(components.url as Any)
+//            print(components.url as Any)
             
             let request = URLRequest(url: components.url!)
             
@@ -75,7 +75,7 @@ class CurrencylayerAPIClien {
                 URLQueryItem(name: "format", value: "1")
             ]
             
-            print(components.url as Any)
+//            print(components.url as Any)
             
             let request = URLRequest(url: components.url!)
             
@@ -123,7 +123,7 @@ class CurrencylayerAPIClien {
                 URLQueryItem(name: "format", value: "1")
             ]
             
-            print(components.url as Any)
+//            print(components.url as Any)
             
             let request = URLRequest(url: components.url!)
             
