@@ -3,11 +3,13 @@ import UIKit
 import CoreData
 import RxSwift
 import RxDataSources
+import GoogleMobileAds
 
 
 class HistoryViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bannerView: GADBannerView!
     private var viewModel: HistoryViewModel!
     private var disposeBag = DisposeBag()
     
@@ -34,6 +36,7 @@ class HistoryViewController: UIViewController, UITableViewDelegate {
         setupViewController()
         setupTableView()
         setupViewModel()
+        showAds()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,5 +77,30 @@ extension HistoryViewController {
         viewModel.items
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
+    }
+}
+
+extension HistoryViewController: GADBannerViewDelegate {
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+      bannerView.alpha = 0
+      UIView.animate(withDuration: 0.6, animations: {
+        bannerView.alpha = 1
+      })
+    }
+    
+    func showAds() {
+        // アドモブのバナー表示
+        bannerView.delegate = self
+        bannerView.adUnitID = Const.TOP_BANNER_AD_UNIT_ID
+        bannerView.rootViewController = self
+        bannerRequest()
+    }
+    
+    /*
+     * 広告のリクエストを送信
+     */
+    func bannerRequest() {
+        bannerView.load(GADRequest())
     }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import FirebaseCore
 import Firebase
 
 
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         return true
     }

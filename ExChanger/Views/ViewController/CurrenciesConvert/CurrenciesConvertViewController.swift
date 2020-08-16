@@ -10,11 +10,14 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import GoogleMobileAds
+
 
 class CurrenciesConvertViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sourceCurrency: UIButton!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     let currenciesViewModel = CurrenciesViewModel()
     let disposeBag = DisposeBag()
@@ -27,7 +30,7 @@ class CurrenciesConvertViewController: UIViewController {
         
         sourceCurrency.setTitle("1.00  \(currenciesViewModel.source)", for: .normal)
         fatchCurrenciesLive()
-        
+        showAds()
     }
     
     @IBAction func pickCurrency(_ sender: Any) {
@@ -77,5 +80,30 @@ extension CurrenciesConvertViewController: CurrenciesConvertDelegate {
         sourceCurrency.setTitle("1.00  \(value)", for: .normal)
         currenciesViewModel.source = value
         fatchCurrenciesLive()
+    }
+}
+
+extension CurrenciesConvertViewController: GADBannerViewDelegate {
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+      bannerView.alpha = 0
+      UIView.animate(withDuration: 0.6, animations: {
+        bannerView.alpha = 1
+      })
+    }
+    
+    func showAds() {
+        // アドモブのバナー表示
+        bannerView.delegate = self
+        bannerView.adUnitID = Const.TOP_BANNER_AD_UNIT_ID
+        bannerView.rootViewController = self
+        bannerRequest()
+    }
+    
+    /*
+     * 広告のリクエストを送信
+     */
+    func bannerRequest() {
+        bannerView.load(GADRequest())
     }
 }

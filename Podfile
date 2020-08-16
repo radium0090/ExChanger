@@ -7,6 +7,7 @@ target 'ExChanger' do
 
   # Firebase
   pod 'Firebase/Analytics'
+  pod 'Firebase/AdMob'
 
   # RxSwift
   pod 'RxSwift'
