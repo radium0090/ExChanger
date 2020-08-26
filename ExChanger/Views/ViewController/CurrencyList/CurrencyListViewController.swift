@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import GoogleMobileAds
 
 protocol CurrenciesConvertDelegate {
     func source(value: String)
@@ -68,6 +69,24 @@ extension CurrencyListViewController: UITableViewDataSource, UITableViewDelegate
         return 36
     }
     
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let wrapView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 100))
+        wrapView.backgroundColor = .white
+        
+        let bannerView = GADBannerView(adSize: kGADAdSizeLargeBanner)
+        bannerView.delegate = self
+        bannerView.adUnitID = Const.SECTION_BANNER_AD_UNIT_ID
+        bannerView.rootViewController = self
+        wrapView.addSubview(bannerView)
+        bannerView.center = wrapView.center
+        bannerView.load(GADRequest())
+        return wrapView
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let key = curencyListViewModel.sectionTitles[section]
@@ -97,6 +116,17 @@ extension CurrencyListViewController: UITableViewDataSource, UITableViewDelegate
             self.dismiss(animated: true, completion: nil)
         }
     }
+}
+
+extension CurrencyListViewController: GADBannerViewDelegate {
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+      bannerView.alpha = 0
+      UIView.animate(withDuration: 0.6, animations: {
+        bannerView.alpha = 1
+      })
+    }
+    
 }
 
 extension CurrencyListViewController {

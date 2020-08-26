@@ -10,16 +10,19 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import GoogleMobileAds
 
 class ConvertViewController: UIViewController {
     
     @IBOutlet var currencyButtons: [UIButton]!
     @IBOutlet weak var inputAmountFirst: UILabel!
     @IBOutlet weak var inputAmountSecond: UILabel!
+    @IBOutlet weak var bannerView: GADBannerView!
     
     let convertViewModel = ConvertViewModel()
     let indicatorView = IndicatorView()
     let disposeBag = DisposeBag()
+    var interstitial: GADInterstitial!
     
     override func viewDidLoad() {
         
@@ -32,8 +35,8 @@ class ConvertViewController: UIViewController {
         inputAmountSecond.addGestureRecognizer(tapInputAmountSecond)
         
         updateInputFocuse()
-        
         setCurrencyButtonTitle()
+        showAds()
     }
     
     @IBAction func pickCurrency(_ sender: UIButton) {
@@ -172,5 +175,53 @@ extension ConvertViewController: CurrenciesConvertDelegate {
         
         setCurrencyButtonTitle()
         updateInputValue()
+        
+        interstitial = createAndLoadInterstitial()
     }
 }
+
+extension ConvertViewController: GADBannerViewDelegate {
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+      bannerView.alpha = 0
+      UIView.animate(withDuration: 0.6, animations: {
+        bannerView.alpha = 1
+      })
+    }
+    
+    func showAds() {
+        // アドモブのバナー表示
+        bannerView.delegate = self
+        bannerView.adUnitID = Const.TOP_BANNER_AD_UNIT_ID
+        bannerView.rootViewController = self
+        bannerRequest()
+    }
+    
+    /*
+     * 広告のリクエストを送信
+     */
+    func bannerRequest() {
+        bannerView.load(GADRequest())
+    }
+}
+
+extension ConvertViewController: GADInterstitialDelegate {
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: Const.INSTERSTITIAL_AD_UNIT_ID)
+      interstitial.delegate = self
+      interstitial.load(GADRequest())
+      return interstitial
+    }
+    
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        loadAds()
+    }
+    
+    func loadAds() {
+        if interstitial.isReady {
+          interstitial.present(fromRootViewController: self)
+        }
+    }
+}
+

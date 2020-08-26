@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
+import GoogleMobileAds
+
 
 class CurrenciesConvertViewController: UIViewController {
     
@@ -19,6 +21,7 @@ class CurrenciesConvertViewController: UIViewController {
     let currenciesViewModel = CurrenciesViewModel()
     let disposeBag = DisposeBag()
     let indicatorView = IndicatorView()
+    var interstitial: GADInterstitial!
     
     override func viewDidLoad() {
         
@@ -27,7 +30,6 @@ class CurrenciesConvertViewController: UIViewController {
         
         sourceCurrency.setTitle("1.00  \(currenciesViewModel.source)", for: .normal)
         fatchCurrenciesLive()
-        
     }
     
     @IBAction func pickCurrency(_ sender: Any) {
@@ -38,6 +40,7 @@ class CurrenciesConvertViewController: UIViewController {
     }
     
     func fatchCurrenciesLive() {
+        interstitial = createAndLoadInterstitial()
         indicatorView.showIndicator(parentView: self.view)
         currenciesViewModel.fatchCurrenciesLive()
             .asObservable().subscribe(onNext: { success in
@@ -54,6 +57,7 @@ class CurrenciesConvertViewController: UIViewController {
                 print(error.localizedDescription)
             })
         .disposed(by: disposeBag)
+        
     }
 
 }
@@ -77,5 +81,25 @@ extension CurrenciesConvertViewController: CurrenciesConvertDelegate {
         sourceCurrency.setTitle("1.00  \(value)", for: .normal)
         currenciesViewModel.source = value
         fatchCurrenciesLive()
+    }
+}
+
+extension CurrenciesConvertViewController: GADInterstitialDelegate {
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: Const.INSTERSTITIAL_AD_UNIT_ID)
+      interstitial.delegate = self
+      interstitial.load(GADRequest())
+      return interstitial
+    }
+    
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        loadAds()
+    }
+    
+    func loadAds() {
+        if interstitial.isReady {
+          interstitial.present(fromRootViewController: self)
+        }
     }
 }
