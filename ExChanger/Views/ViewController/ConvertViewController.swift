@@ -12,7 +12,6 @@ import RxSwift
 import RxCocoa
 import GoogleMobileAds
 
-
 class ConvertViewController: UIViewController {
     
     @IBOutlet var currencyButtons: [UIButton]!
@@ -23,6 +22,7 @@ class ConvertViewController: UIViewController {
     let convertViewModel = ConvertViewModel()
     let indicatorView = IndicatorView()
     let disposeBag = DisposeBag()
+    var interstitial: GADInterstitial!
     
     override func viewDidLoad() {
         
@@ -175,6 +175,8 @@ extension ConvertViewController: CurrenciesConvertDelegate {
         
         setCurrencyButtonTitle()
         updateInputValue()
+        
+        interstitial = createAndLoadInterstitial()
     }
 }
 
@@ -202,3 +204,24 @@ extension ConvertViewController: GADBannerViewDelegate {
         bannerView.load(GADRequest())
     }
 }
+
+extension ConvertViewController: GADInterstitialDelegate {
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: Const.INSTERSTITIAL_AD_UNIT_ID)
+      interstitial.delegate = self
+      interstitial.load(GADRequest())
+      return interstitial
+    }
+    
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        loadAds()
+    }
+    
+    func loadAds() {
+        if interstitial.isReady {
+          interstitial.present(fromRootViewController: self)
+        }
+    }
+}
+

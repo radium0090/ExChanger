@@ -9,12 +9,12 @@ import GoogleMobileAds
 class HistoryViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var bannerView: GADBannerView!
     private var viewModel: HistoryViewModel!
     private var disposeBag = DisposeBag()
     
     // load with rxdatasource
     private lazy var dataSource = RxTableViewSectionedReloadDataSource<SectionOfConversion>(configureCell: configureCell, titleForHeaderInSection: titleForHeaderInSection, canEditRowAtIndexPath: canEditRowAtIndexPath)
+    
     private lazy var configureCell: RxTableViewSectionedReloadDataSource<SectionOfConversion>.ConfigureCell = { [weak self] (dataSource, tableView, indexPath, conversion) in
         let cell = tableView.dequeueReusableCell(withIdentifier: HistoryTableViewCell.identifier, for: indexPath) as! HistoryTableViewCell
         cell.setCell(dt: conversion.dateTime!,
@@ -24,9 +24,11 @@ class HistoryViewController: UIViewController, UITableViewDelegate {
                      tv: conversion.targetValue)
         return cell
     }
+    
     private lazy var titleForHeaderInSection: RxTableViewSectionedReloadDataSource<SectionOfConversion>.TitleForHeaderInSection = { [weak self] (dataSource, indexPath) in
         return dataSource.sectionModels[indexPath].header
     }
+    
     private lazy var canEditRowAtIndexPath: RxTableViewSectionedReloadDataSource<SectionOfConversion>.CanEditRowAtIndexPath = { _, _ in
         return true
     }
@@ -36,7 +38,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate {
         setupViewController()
         setupTableView()
         setupViewModel()
-        showAds()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -71,6 +72,28 @@ extension HistoryViewController {
         }).disposed(by: disposeBag)
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 38
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let wrapView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 100))
+        wrapView.backgroundColor = .white
+        
+        let bannerView = GADBannerView(adSize: kGADAdSizeLargeBanner)
+        bannerView.delegate = self
+        bannerView.adUnitID = Const.SECTION_BANNER_AD_UNIT_ID
+        bannerView.rootViewController = self
+        wrapView.addSubview(bannerView)
+        bannerView.center = wrapView.center
+        bannerView.load(GADRequest())
+        return wrapView
+    }
+    
     // bind viewModel
     private func setupViewModel() {
         viewModel = HistoryViewModel()
@@ -89,18 +112,18 @@ extension HistoryViewController: GADBannerViewDelegate {
       })
     }
     
-    func showAds() {
-        // アドモブのバナー表示
-        bannerView.delegate = self
-        bannerView.adUnitID = Const.TOP_BANNER_AD_UNIT_ID
-        bannerView.rootViewController = self
-        bannerRequest()
-    }
-    
-    /*
-     * 広告のリクエストを送信
-     */
-    func bannerRequest() {
-        bannerView.load(GADRequest())
-    }
+//    func showAds() {
+//        // アドモブのバナー表示
+//        bannerView.delegate = self
+//        bannerView.adUnitID = Const.TOP_BANNER_AD_UNIT_ID
+//        bannerView.rootViewController = self
+//        bannerRequest()
+//    }
+//
+//    /*
+//     * 広告のリクエストを送信
+//     */
+//    func bannerRequest() {
+//        bannerView.load(GADRequest())
+//    }
 }

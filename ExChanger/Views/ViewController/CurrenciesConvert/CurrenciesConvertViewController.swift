@@ -17,11 +17,11 @@ class CurrenciesConvertViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sourceCurrency: UIButton!
-    @IBOutlet weak var bannerView: GADBannerView!
     
     let currenciesViewModel = CurrenciesViewModel()
     let disposeBag = DisposeBag()
     let indicatorView = IndicatorView()
+    var interstitial: GADInterstitial!
     
     override func viewDidLoad() {
         
@@ -30,7 +30,6 @@ class CurrenciesConvertViewController: UIViewController {
         
         sourceCurrency.setTitle("1.00  \(currenciesViewModel.source)", for: .normal)
         fatchCurrenciesLive()
-        showAds()
     }
     
     @IBAction func pickCurrency(_ sender: Any) {
@@ -41,6 +40,7 @@ class CurrenciesConvertViewController: UIViewController {
     }
     
     func fatchCurrenciesLive() {
+        interstitial = createAndLoadInterstitial()
         indicatorView.showIndicator(parentView: self.view)
         currenciesViewModel.fatchCurrenciesLive()
             .asObservable().subscribe(onNext: { success in
@@ -57,6 +57,7 @@ class CurrenciesConvertViewController: UIViewController {
                 print(error.localizedDescription)
             })
         .disposed(by: disposeBag)
+        
     }
 
 }
@@ -83,27 +84,22 @@ extension CurrenciesConvertViewController: CurrenciesConvertDelegate {
     }
 }
 
-extension CurrenciesConvertViewController: GADBannerViewDelegate {
+extension CurrenciesConvertViewController: GADInterstitialDelegate {
     
-    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
-      bannerView.alpha = 0
-      UIView.animate(withDuration: 0.6, animations: {
-        bannerView.alpha = 1
-      })
+    func createAndLoadInterstitial() -> GADInterstitial {
+        let interstitial = GADInterstitial(adUnitID: Const.INSTERSTITIAL_AD_UNIT_ID)
+      interstitial.delegate = self
+      interstitial.load(GADRequest())
+      return interstitial
     }
     
-    func showAds() {
-        // アドモブのバナー表示
-        bannerView.delegate = self
-        bannerView.adUnitID = Const.TOP_BANNER_AD_UNIT_ID
-        bannerView.rootViewController = self
-        bannerRequest()
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
+        loadAds()
     }
     
-    /*
-     * 広告のリクエストを送信
-     */
-    func bannerRequest() {
-        bannerView.load(GADRequest())
+    func loadAds() {
+        if interstitial.isReady {
+          interstitial.present(fromRootViewController: self)
+        }
     }
 }

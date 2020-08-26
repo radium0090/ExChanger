@@ -9,7 +9,7 @@ class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var imgView: UIImageView!
     
     func setCell(dt: Date, bk: String, bv: Double, tk: String, tv: Double) {
-        dateTime.text = ExchangerUtil.sharedInstance().dateAsString(dt)
+        dateTime.text = "Convert Time : \(ExchangerUtil.sharedInstance().dateAsString(dt, dateFormat: "HH:mm:ss"))"
         baseKeyName.text = bk
         baseValue.text = String(describing: bv)
         targetKeyName.text = tk
