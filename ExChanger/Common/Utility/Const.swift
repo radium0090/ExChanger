@@ -23,7 +23,7 @@ public struct Const {
     #endif
     
     #if RELEASE
-    public static let INSTERSTITIAL_AD_UNIT_ID = ""
+    public static let INSTERSTITIAL_AD_UNIT_ID = "ca-app-pub-1668811522927993/4075068732"
     #else
     public static let INSTERSTITIAL_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
     #endif
