@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>225175579641-qqqvv0edr148k0n5bt06osaohdv0dacr.apps.googleusercontent.com</string>
+	<string>225175579641-1lkibe9f4eoo4vs8rjtg29t4s0bu3i0v.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.225175579641-qqqvv0edr148k0n5bt06osaohdv0dacr</string>
+	<string>com.googleusercontent.apps.225175579641-1lkibe9f4eoo4vs8rjtg29t4s0bu3i0v</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCHVKPXut6DTiGUgq0RXx7rYXXcEBjbnY0</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>greymatter.co.bd.ExChanger</string>
+	<string>me.inkchat.exchanger</string>
 	<key>PROJECT_ID</key>
 	<string>currency-exchanger-71a1e</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,8 +29,10 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:225175579641:ios:32a0230bfff2e67c96eb28</string>
+	<string>1:225175579641:ios:4abd1934f831830b96eb28</string>
 	<key>DATABASE_URL</key>
 	<string>https://currency-exchanger-71a1e.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-1668811522927993~4900544754</string>
 </dict>
 </plist>

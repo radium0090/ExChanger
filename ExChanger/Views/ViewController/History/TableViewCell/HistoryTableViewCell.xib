@@ -24,7 +24,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="vP5-cT-goh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -101,7 +101,7 @@
                         </constraints>
                     </stackView>
                 </subviews>
-                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                <color key="backgroundColor" white="1" alpha="0.8047945205" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="08j-W8-sTE" secondAttribute="trailing" id="1SE-Tn-FDc"/>
                     <constraint firstItem="08j-W8-sTE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="HRy-mO-14Q"/>
@@ -109,6 +109,7 @@
                     <constraint firstItem="08j-W8-sTE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="zBp-DR-cZA"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="1" alpha="0.8047945205" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="baseKeyName" destination="qRf-nm-0wu" id="Aqp-KI-hXY"/>
@@ -118,7 +119,7 @@
                 <outlet property="targetKeyName" destination="ea5-BM-5zg" id="fig-6J-Ji2"/>
                 <outlet property="targetValue" destination="kic-6w-wxn" id="McU-FH-Jty"/>
             </connections>
-            <point key="canvasLocation" x="343.47826086956525" y="78.683035714285708"/>
+            <point key="canvasLocation" x="-20" y="63"/>
         </tableViewCell>
     </objects>
     <resources>

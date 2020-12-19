@@ -15,13 +15,13 @@
 		8C4C7F6624CDA8E70011DAD1 /* CurrencylayerAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C7F6524CDA8E70011DAD1 /* CurrencylayerAPIClient.swift */; };
 		8C4C7F6824CDB9220011DAD1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C7F6724CDB9220011DAD1 /* Reachability.swift */; };
 		8C4C7F6A24CDBA690011DAD1 /* Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C7F6924CDBA690011DAD1 /* Paths.swift */; };
+		8C52919F24F6F27E000A14D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C52919E24F6F27D000A14D9 /* Assets.xcassets */; };
 		8C52A4AA24CE90A200E36B13 /* CurrenciesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52A4A924CE90A200E36B13 /* CurrenciesViewModel.swift */; };
 		8C52A4AC24CE950400E36B13 /* Quotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52A4AB24CE950400E36B13 /* Quotes.swift */; };
 		8C53D55D24CBDF5D00D3395C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53D55C24CBDF5D00D3395C /* AppDelegate.swift */; };
 		8C53D55F24CBDF5D00D3395C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53D55E24CBDF5D00D3395C /* SceneDelegate.swift */; };
 		8C53D56624CBDF5D00D3395C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C53D56424CBDF5D00D3395C /* Main.storyboard */; };
 		8C53D56924CBDF5D00D3395C /* ExChanger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8C53D56724CBDF5D00D3395C /* ExChanger.xcdatamodeld */; };
-		8C53D56B24CBDF5F00D3395C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C53D56A24CBDF5F00D3395C /* Assets.xcassets */; };
 		8C53D56E24CBDF5F00D3395C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C53D56C24CBDF5F00D3395C /* LaunchScreen.storyboard */; };
 		8C53D57924CBDF5F00D3395C /* ExChangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53D57824CBDF5F00D3395C /* ExChangerTests.swift */; };
 		8C53D58424CBDF5F00D3395C /* ExChangerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C53D58324CBDF5F00D3395C /* ExChangerUITests.swift */; };
@@ -40,7 +40,8 @@
 		8CF3B27824CD304D00C4390E /* CurrencyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF3B27724CD304D00C4390E /* CurrencyListTableViewCell.swift */; };
 		8CF7E4C924CC923B007FAACB /* CurrenciesConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7E4C824CC923B007FAACB /* CurrenciesConvertViewController.swift */; };
 		8CF7E4CC24CC99BD007FAACB /* CurrenciesVonvertTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CF7E4CB24CC99BD007FAACB /* CurrenciesVonvertTableViewCell.swift */; };
-		EEA9F09A24CC73A000958C14 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEA9F09924CC73A000958C14 /* GoogleService-Info.plist */; };
+		EEC9217C24E8E29A00B44696 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC9217B24E8E29A00B44696 /* Const.swift */; };
+		EEF2402A24E8EBC100FE4CA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EEF2402924E8EBC100FE4CA7 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		8C4C7F6924CDBA690011DAD1 /* Paths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paths.swift; sourceTree = "<group>"; };
 		8C4C7F6B24CDE3630011DAD1 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C4C7F6F24CDE36E0011DAD1 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C52919E24F6F27D000A14D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C52A4A924CE90A200E36B13 /* CurrenciesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesViewModel.swift; sourceTree = "<group>"; };
 		8C52A4AB24CE950400E36B13 /* Quotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotes.swift; sourceTree = "<group>"; };
 		8C53D55924CBDF5D00D3395C /* ExChanger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExChanger.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +79,6 @@
 		8C53D55E24CBDF5D00D3395C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8C53D56524CBDF5D00D3395C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8C53D56824CBDF5D00D3395C /* ExChanger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExChanger.xcdatamodel; sourceTree = "<group>"; };
-		8C53D56A24CBDF5F00D3395C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8C53D56D24CBDF5F00D3395C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C53D56F24CBDF5F00D3395C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C53D57424CBDF5F00D3395C /* ExChangerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExChangerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +105,8 @@
 		8CF7E4CB24CC99BD007FAACB /* CurrenciesVonvertTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesVonvertTableViewCell.swift; sourceTree = "<group>"; };
 		CD87D1E573D5DF0345820B95 /* Pods_ExChanger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExChanger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D54EA58EEEA65E28DD1B5F4E /* Pods-ExChanger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExChanger.debug.xcconfig"; path = "Target Support Files/Pods-ExChanger/Pods-ExChanger.debug.xcconfig"; sourceTree = "<group>"; };
-		EEA9F09924CC73A000958C14 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EEC9217B24E8E29A00B44696 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		EEF2402924E8EBC100FE4CA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,9 +186,9 @@
 				8C53D59524CBE37400D3395C /* Common */,
 				8C53D55C24CBDF5D00D3395C /* AppDelegate.swift */,
 				8C53D55E24CBDF5D00D3395C /* SceneDelegate.swift */,
-				8C53D56A24CBDF5F00D3395C /* Assets.xcassets */,
+				8C52919E24F6F27D000A14D9 /* Assets.xcassets */,
 				8C53D56F24CBDF5F00D3395C /* Info.plist */,
-				EEA9F09924CC73A000958C14 /* GoogleService-Info.plist */,
+				EEF2402924E8EBC100FE4CA7 /* GoogleService-Info.plist */,
 			);
 			path = ExChanger;
 			sourceTree = "<group>";
@@ -265,6 +267,7 @@
 				8C4C7F6724CDB9220011DAD1 /* Reachability.swift */,
 				8C4C7F6124CD915A0011DAD1 /* UserDefaultsKeys.swift */,
 				8C4C7F5D24CD91280011DAD1 /* IndicatorView.swift */,
+				EEC9217B24E8E29A00B44696 /* Const.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -458,10 +461,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C53D56E24CBDF5F00D3395C /* LaunchScreen.storyboard in Resources */,
-				EEA9F09A24CC73A000958C14 /* GoogleService-Info.plist in Resources */,
-				8C53D56B24CBDF5F00D3395C /* Assets.xcassets in Resources */,
+				EEF2402A24E8EBC100FE4CA7 /* GoogleService-Info.plist in Resources */,
 				8C53D56624CBDF5D00D3395C /* Main.storyboard in Resources */,
 				8CCAAADF24D17A2000334754 /* HistoryTableViewCell.xib in Resources */,
+				8C52919F24F6F27E000A14D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +539,7 @@
 				8CF3B27824CD304D00C4390E /* CurrencyListTableViewCell.swift in Sources */,
 				8CA5B3F324D1E4BF009210D2 /* CoreDataClient.swift in Sources */,
 				8C4C7F6024CD91530011DAD1 /* UserDefaults+Extension.swift in Sources */,
+				EEC9217C24E8E29A00B44696 /* Const.swift in Sources */,
 				8C52A4AA24CE90A200E36B13 /* CurrenciesViewModel.swift in Sources */,
 				8CCAAADE24D17A2000334754 /* HistoryTableViewCell.swift in Sources */,
 				8CCAAAE124D17A5600334754 /* ExchangerUtil.swift in Sources */,
@@ -729,17 +733,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.1.0;
+				CURRENT_PROJECT_VERSION = 1.0.2.4;
 				DEVELOPMENT_TEAM = 45899R2U3V;
 				INFOPLIST_FILE = ExChanger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = me.inkchat.exchanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -752,17 +758,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.1.0;
+				CURRENT_PROJECT_VERSION = 1.0.2.4;
 				DEVELOPMENT_TEAM = 45899R2U3V;
 				INFOPLIST_FILE = ExChanger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
+				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = me.inkchat.exchanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
