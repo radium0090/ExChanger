@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		12269D6C1BDC6DF7CF00CFD5 /* Pods_ExChanger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD87D1E573D5DF0345820B95 /* Pods_ExChanger.framework */; };
+		4213116B265BF98D0037CCE0 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4213116A265BF98D0037CCE0 /* ToastView.swift */; };
 		8C4C7F5E24CD91280011DAD1 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C7F5D24CD91280011DAD1 /* IndicatorView.swift */; };
 		8C4C7F6024CD91530011DAD1 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C7F5F24CD91530011DAD1 /* UserDefaults+Extension.swift */; };
 		8C4C7F6224CD915A0011DAD1 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4C7F6124CD915A0011DAD1 /* UserDefaultsKeys.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4213116A265BF98D0037CCE0 /* ToastView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		8C4C7F5D24CD91280011DAD1 /* IndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 		8C4C7F5F24CD91530011DAD1 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		8C4C7F6124CD915A0011DAD1 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 				8C4C7F6124CD915A0011DAD1 /* UserDefaultsKeys.swift */,
 				8C4C7F5D24CD91280011DAD1 /* IndicatorView.swift */,
 				EEC9217B24E8E29A00B44696 /* Const.swift */,
+				4213116A265BF98D0037CCE0 /* ToastView.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				8CF3B27824CD304D00C4390E /* CurrencyListTableViewCell.swift in Sources */,
 				8CA5B3F324D1E4BF009210D2 /* CoreDataClient.swift in Sources */,
 				8C4C7F6024CD91530011DAD1 /* UserDefaults+Extension.swift in Sources */,
+				4213116B265BF98D0037CCE0 /* ToastView.swift in Sources */,
 				EEC9217C24E8E29A00B44696 /* Const.swift in Sources */,
 				8C52A4AA24CE90A200E36B13 /* CurrenciesViewModel.swift in Sources */,
 				8CCAAADE24D17A2000334754 /* HistoryTableViewCell.swift in Sources */,
@@ -734,7 +738,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.2.4;
-				DEVELOPMENT_TEAM = 45899R2U3V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ExChanger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -759,7 +763,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.2.4;
-				DEVELOPMENT_TEAM = 45899R2U3V;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ExChanger/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

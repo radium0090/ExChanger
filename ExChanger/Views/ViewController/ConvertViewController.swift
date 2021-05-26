@@ -41,8 +41,8 @@ class ConvertViewController: UIViewController {
     
     @IBAction func pickCurrency(_ sender: UIButton) {
         convertViewModel.currencyTag = sender.tag
-        
-        if let currencyListViewController = CurrencyListViewController.storyboardInstance() {
+            if let currencyListViewController = CurrencyListViewController.storyboardInstance() {
+            currencyListViewController.sourceConvertionCode = convertViewModel.currencyName[0]
             currencyListViewController.delegate = self
             self.present(currencyListViewController, animated: true, completion: nil)
         }
