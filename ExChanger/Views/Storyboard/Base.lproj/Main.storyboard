@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,38 +30,44 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Xtn-b4-hKY">
                                                         <rect key="frame" x="0.0" y="0.0" width="83.5" height="236"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghu-rg-LZL">
+                                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghu-rg-LZL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="68"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="primaryButtonBackgoundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="68" id="TxB-af-GIS"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <state key="normal" title="7"/>
+                                                                <state key="normal" title="7">
+                                                                    <color key="titleColor" name="primaryButtonTextColor"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="appendNumber:" destination="9pv-A4-QxB" eventType="touchUpInside" id="9OZ-UJ-a4N"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGk-gk-4Hb">
+                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yGk-gk-4Hb">
                                                                 <rect key="frame" x="0.0" y="84" width="83.5" height="68"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="primaryButtonBackgoundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="68" id="yxs-sb-UlW"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <state key="normal" title="4"/>
+                                                                <state key="normal" title="4">
+                                                                    <color key="titleColor" name="primaryButtonTextColor"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="appendNumber:" destination="9pv-A4-QxB" eventType="touchUpInside" id="4QE-u1-lVY"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTX-DS-IEt">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTX-DS-IEt">
                                                                 <rect key="frame" x="0.0" y="168" width="83.5" height="68"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="primaryButtonBackgoundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="68" id="bK5-EO-1eR"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <state key="normal" title="1"/>
+                                                                <state key="normal" title="1">
+                                                                    <color key="titleColor" name="primaryButtonTextColor"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="appendNumber:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Hpx-8Q-642"/>
                                                                 </connections>
@@ -68,38 +77,44 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="sbn-Sb-6F4">
                                                         <rect key="frame" x="99.5" y="0.0" width="83.5" height="236"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOq-ob-yhC">
+                                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOq-ob-yhC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="68"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="primaryButtonBackgoundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="68" id="Xl7-YO-5wE"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <state key="normal" title="8"/>
+                                                                <state key="normal" title="8">
+                                                                    <color key="titleColor" name="primaryButtonTextColor"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="appendNumber:" destination="9pv-A4-QxB" eventType="touchUpInside" id="kSM-rx-nHG"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5g7-SO-zjc">
+                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5g7-SO-zjc">
                                                                 <rect key="frame" x="0.0" y="84" width="83.5" height="68"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="primaryButtonBackgoundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="68" id="Geh-mr-Buo"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <state key="normal" title="5"/>
+                                                                <state key="normal" title="5">
+                                                                    <color key="titleColor" name="primaryButtonTextColor"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="appendNumber:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Vof-XE-T1X"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPd-Wq-Msb">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPd-Wq-Msb">
                                                                 <rect key="frame" x="0.0" y="168" width="83.5" height="68"/>
-                                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="primaryButtonBackgoundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="68" id="yvr-mF-Yda"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                                <state key="normal" title="2"/>
+                                                                <state key="normal" title="2">
+                                                                    <color key="titleColor" name="primaryButtonTextColor"/>
+                                                                </state>
                                                                 <connections>
                                                                     <action selector="appendNumber:" destination="9pv-A4-QxB" eventType="touchUpInside" id="KfT-oh-hbD"/>
                                                                 </connections>
@@ -108,14 +123,16 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtY-6R-FcU">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LtY-6R-FcU">
                                                 <rect key="frame" x="0.0" y="254" width="183" height="68"/>
-                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20143942636986301" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" name="primaryButtonBackgoundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="68" id="LRx-B1-WnK"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal" title="0"/>
+                                                <state key="normal" title="0">
+                                                    <color key="titleColor" name="primaryButtonTextColor"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="appendNumber:" destination="9pv-A4-QxB" eventType="touchUpInside" id="THt-1s-qRQ"/>
                                                 </connections>
@@ -128,38 +145,46 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xMg-Mq-FjT">
                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="322"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzS-eU-jGt">
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzS-eU-jGt">
                                                         <rect key="frame" x="0.0" y="0.0" width="83.5" height="68.5"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="primaryButtonBackgoundColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <state key="normal" title="9"/>
+                                                        <state key="normal" title="9">
+                                                            <color key="titleColor" name="primaryButtonTextColor"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="appendNumber:" destination="9pv-A4-QxB" eventType="touchUpInside" id="416-ts-JXv"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xty-fn-4L1">
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xty-fn-4L1">
                                                         <rect key="frame" x="0.0" y="84.5" width="83.5" height="68.5"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="primaryButtonBackgoundColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <state key="normal" title="6"/>
+                                                        <state key="normal" title="6">
+                                                            <color key="titleColor" name="primaryButtonTextColor"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="appendNumber:" destination="9pv-A4-QxB" eventType="touchUpInside" id="hmB-B3-XLf"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIm-UJ-Hcl">
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIm-UJ-Hcl">
                                                         <rect key="frame" x="0.0" y="169" width="83.5" height="68.5"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="primaryButtonBackgoundColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                        <state key="normal" title="3"/>
+                                                        <state key="normal" title="3">
+                                                            <color key="titleColor" name="primaryButtonTextColor"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="appendNumber:" destination="9pv-A4-QxB" eventType="touchUpInside" id="3My-yL-7aQ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gw-yD-lOb">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gw-yD-lOb">
                                                         <rect key="frame" x="0.0" y="253.5" width="83.5" height="68.5"/>
-                                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="primaryButtonBackgoundColor"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                        <state key="normal" title="."/>
+                                                        <state key="normal" title=".">
+                                                            <color key="titleColor" name="primaryButtonTextColor"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="addDecimalValue:" destination="9pv-A4-QxB" eventType="touchUpInside" id="G14-91-46J"/>
                                                         </connections>
@@ -172,18 +197,18 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="CeM-CE-Waj">
                                                         <rect key="frame" x="0.0" y="0.0" width="83.5" height="153"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSb-fz-IUw">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSb-fz-IUw">
                                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="68.5"/>
-                                                                <color key="backgroundColor" red="0.77635231598984777" green="0.74270606611850487" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="ACButtonBackgroundColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <state key="normal" title="AC"/>
                                                                 <connections>
                                                                     <action selector="cleanInputValue:" destination="9pv-A4-QxB" eventType="touchUpInside" id="H4c-1d-3zN"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2u-kJ-luX">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2u-kJ-luX">
                                                                 <rect key="frame" x="0.0" y="84.5" width="83.5" height="68.5"/>
-                                                                <color key="backgroundColor" red="0.72576935279187815" green="0.074453875747050494" blue="0.0" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" name="deleteBackgorundColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <state key="normal" title="DEL"/>
                                                                 <connections>
@@ -192,11 +217,13 @@
                                                             </button>
                                                         </subviews>
                                                     </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELJ-Ku-i1Z">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELJ-Ku-i1Z">
                                                         <rect key="frame" x="0.0" y="169" width="83.5" height="153"/>
-                                                        <color key="backgroundColor" red="0.020866955180293714" green="0.66846446700507611" blue="0.10944027207662976" alpha="0.20143942640000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" name="convertButtonBackgoundColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <state key="normal" title="Convert"/>
+                                                        <state key="normal" title="Convert">
+                                                            <color key="titleColor" name="primaryButtonTextColor"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="convertInput:" destination="9pv-A4-QxB" eventType="touchUpInside" id="DNa-zv-4N0"/>
                                                         </connections>
@@ -216,7 +243,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zxO-NU-K83">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="103.5"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgo-Jd-RAp">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgo-Jd-RAp">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="GaB-5i-vdU"/>
@@ -230,7 +257,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="none" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bx6-1g-x2n">
                                                 <rect key="frame" x="0.0" y="46" width="382" height="57.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" name="primaryButtonTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -246,7 +273,7 @@
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow.2.squarepath" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yos-Iu-XAK">
                                         <rect key="frame" x="0.0" y="112.5" width="382" height="29.5"/>
-                                        <color key="tintColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" systemColor="systemOrangeColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="pbl-tx-O1L"/>
                                         </constraints>
@@ -254,7 +281,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gZe-vT-VbS">
                                         <rect key="frame" x="0.0" y="151.5" width="382" height="98.5"/>
                                         <subviews>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCa-O8-Rqb">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCa-O8-Rqb">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="38" id="5MO-Ac-P7l"/>
@@ -290,10 +317,11 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nl-P3-ktk" customClass="GADBannerView">
                                 <rect key="frame" x="16" y="326" width="382" height="133"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="hVw-Qq-6nA" secondAttribute="trailing" constant="16" id="5tn-WZ-fz1"/>
                             <constraint firstItem="TpJ-Se-zUu" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="GMq-mh-abA"/>
@@ -306,7 +334,6 @@
                             <constraint firstItem="hVw-Qq-6nA" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="16" id="hFO-da-nlK"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="TpJ-Se-zUu" secondAttribute="bottom" constant="16" id="tQQ-x0-DpH"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Convert" image="arrow.2.squarepath" catalog="system" id="acW-dT-cKf"/>
                     <connections>
@@ -331,11 +358,12 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="eDK-Fz-jeo">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                 <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="eDK-Fz-jeo" firstAttribute="trailing" secondItem="O1u-W8-tvY" secondAttribute="trailing" id="ENG-Qr-3Td"/>
                             <constraint firstItem="O1u-W8-tvY" firstAttribute="bottom" secondItem="eDK-Fz-jeo" secondAttribute="bottom" id="Ewz-gd-Orj"/>
@@ -343,7 +371,6 @@
                             <constraint firstItem="eDK-Fz-jeo" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="RTH-Qp-pyd"/>
                             <constraint firstItem="eDK-Fz-jeo" firstAttribute="top" secondItem="O1u-W8-tvY" secondAttribute="top" id="xoK-b6-63H"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
                     <navigationItem key="navigationItem" id="eE9-ve-cEq"/>
                     <connections>
@@ -363,21 +390,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="NZf-xe-Gyz">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                 <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CurrencyListTableViewCell" id="HmV-uv-Ec9" customClass="CurrencyListTableViewCell" customModule="ExChanger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="54.333332061767578"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="54"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HmV-uv-Ec9" id="iCb-bp-I4K">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="54.333332061767578"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPy-DT-yFn">
-                                                    <rect key="frame" x="16" y="15.999999999999998" width="382" height="22.333333333333329"/>
+                                                    <rect key="frame" x="16" y="16" width="382" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                    <color key="textColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="systemBlueColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -396,14 +423,14 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="R1r-in-U1z"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="R1r-in-U1z" firstAttribute="trailing" secondItem="NZf-xe-Gyz" secondAttribute="trailing" id="4gU-fz-Kok"/>
                             <constraint firstItem="R1r-in-U1z" firstAttribute="bottom" secondItem="NZf-xe-Gyz" secondAttribute="bottom" id="MD3-Kn-mmF"/>
                             <constraint firstItem="NZf-xe-Gyz" firstAttribute="leading" secondItem="R1r-in-U1z" secondAttribute="leading" id="uzN-Cj-1gb"/>
                             <constraint firstItem="NZf-xe-Gyz" firstAttribute="top" secondItem="R1r-in-U1z" secondAttribute="top" id="xaF-hH-hRh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="R1r-in-U1z"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="NZf-xe-Gyz" id="MXO-tt-dwa"/>
@@ -445,22 +472,22 @@
                                 <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CurrenciesVonvertTableViewCell" id="8v0-cK-I3X" customClass="CurrenciesVonvertTableViewCell" customModule="ExChanger" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="61"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="60.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8v0-cK-I3X" id="oak-3M-bUk">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpB-NU-MXY">
-                                                    <rect key="frame" x="16" y="12" width="37" height="37"/>
+                                                    <rect key="frame" x="16" y="12" width="37" height="36.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1i-Kt-JH0">
-                                                    <rect key="frame" x="61" y="19" width="333" height="23"/>
+                                                    <rect key="frame" x="61" y="19" width="333" height="22.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" systemColor="linkColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -475,7 +502,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="vpB-NU-MXY" secondAttribute="bottom" constant="12" id="kHL-cW-c9E"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
                                         <connections>
                                             <outlet property="currenciesName" destination="vpB-NU-MXY" id="fM8-P2-gaL"/>
                                             <outlet property="rate" destination="s1i-Kt-JH0" id="LSU-CD-Xlt"/>
@@ -483,7 +510,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PS0-UA-Pa1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PS0-UA-Pa1">
                                 <rect key="frame" x="16" y="64" width="382" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="PS0-UA-Pa1" secondAttribute="height" multiplier="191:22" id="89X-Ml-3Oe"/>
@@ -497,7 +524,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="zHA-Ui-W3n"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PS0-UA-Pa1" firstAttribute="top" secondItem="zHA-Ui-W3n" secondAttribute="top" constant="20" id="0gC-Sl-M2x"/>
                             <constraint firstItem="SHC-pZ-KR6" firstAttribute="trailing" secondItem="zHA-Ui-W3n" secondAttribute="trailing" id="D1e-ac-ukI"/>
@@ -509,7 +537,6 @@
                             <constraint firstItem="SHC-pZ-KR6" firstAttribute="trailing" secondItem="zHA-Ui-W3n" secondAttribute="trailing" id="oF8-TE-vzt"/>
                             <constraint firstItem="SHC-pZ-KR6" firstAttribute="bottom" secondItem="zHA-Ui-W3n" secondAttribute="bottom" id="zGD-hi-VIV"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zHA-Ui-W3n"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Currency List" image="list.bullet" catalog="system" id="Aj3-Yv-BkD"/>
                     <connections>
@@ -545,5 +572,35 @@
         <image name="arrow.2.squarepath" catalog="system" width="128" height="89"/>
         <image name="calendar" catalog="system" width="128" height="106"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
+        <namedColor name="ACButtonBackgroundColor">
+            <color red="0.9570000171661377" green="0.94700002670288086" blue="0.80099999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="convertButtonBackgoundColor">
+            <color red="0.80500000715255737" green="0.93199998140335083" blue="0.81999999284744263" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="deleteBackgorundColor">
+            <color red="0.9440000057220459" green="0.81099998950958252" blue="0.80199998617172241" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryButtonBackgoundColor">
+            <color red="0.63899999856948853" green="0.63899999856948853" blue="0.63899999856948853" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryButtonTextColor">
+            <color red="0.0" green="0.4779999852180481" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
