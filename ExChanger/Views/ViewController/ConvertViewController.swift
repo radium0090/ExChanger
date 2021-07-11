@@ -140,10 +140,10 @@ class ConvertViewController: UIViewController {
     func updateInputFocuse() {
         
         if inputAmountFirst.tag == convertViewModel.inputValueTag {
-            inputAmountFirst.textColor = UIColor.black
+            inputAmountFirst.textColor = UIColor.init(named: "inputAmopuntLabelTextColor")
             inputAmountFirst.font = UIFont.systemFont(ofSize: 48)
         } else {
-            inputAmountFirst.textColor = UIColor.gray
+            inputAmountFirst.textColor = UIColor.init(named: "inputAmopuntLabelTextColor")
             inputAmountFirst.font = UIFont.systemFont(ofSize: 36)
         }
         
