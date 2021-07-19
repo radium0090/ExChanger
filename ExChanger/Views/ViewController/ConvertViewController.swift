@@ -11,6 +11,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import GoogleMobileAds
+import AppTrackingTransparency
 
 class ConvertViewController: UIViewController {
     
@@ -23,6 +24,11 @@ class ConvertViewController: UIViewController {
     let indicatorView = IndicatorView()
     let disposeBag = DisposeBag()
     var interstitial: GADInterstitial!
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        checkATT()
+    }
     
     override func viewDidLoad() {
         
@@ -161,6 +167,40 @@ class ConvertViewController: UIViewController {
     func updateInputValue() {
         inputAmountFirst.text = convertViewModel.currencyValue[0]
         inputAmountSecond.text = convertViewModel.currencyValue[1]
+    }
+    
+    func checkATT() {
+        if #available(iOS 14, *) {
+            switch ATTrackingManager.trackingAuthorizationStatus {
+            case .authorized:
+                print("Allow Tracking")
+            case .denied:
+                print("Denided")
+            case .restricted:
+                print("Limited")
+            case .notDetermined:
+                showRequestTrackingAuthorizationAlert()
+            @unknown default:
+                fatalError()
+            }
+        } else {
+            print("Nothing implement")
+        }
+    }
+    
+    private func showRequestTrackingAuthorizationAlert() {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                switch status {
+                case .authorized:
+                    print("can get IDFA")
+                case .denied, .restricted, .notDetermined:
+                    print("no way")
+                @unknown default:
+                    fatalError()
+                }
+            })
+        }
     }
 }
 
