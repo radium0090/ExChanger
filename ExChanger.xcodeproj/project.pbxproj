@@ -737,7 +737,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.3.1;
+				CURRENT_PROJECT_VERSION = 1.0.4.0;
 				DEVELOPMENT_TEAM = 45899R2U3V;
 				INFOPLIST_FILE = ExChanger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
@@ -745,7 +745,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = me.inkchat.exchanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -763,7 +763,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.3.1;
+				CURRENT_PROJECT_VERSION = 1.0.4.0;
 				DEVELOPMENT_TEAM = 45899R2U3V;
 				INFOPLIST_FILE = ExChanger/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
@@ -771,7 +771,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS";
 				PRODUCT_BUNDLE_IDENTIFIER = me.inkchat.exchanger;
 				PRODUCT_NAME = "$(TARGET_NAME)";
