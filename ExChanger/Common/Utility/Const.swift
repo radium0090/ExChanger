@@ -28,5 +28,6 @@ public struct Const {
 //    public static let INSTERSTITIAL_AD_UNIT_ID = "ca-app-pub-3940256099942544/1033173712"
 //    #endif
     
+    public static let sameConvertionType = "Same Convertion Type is Selected"
 
 }

@@ -24,6 +24,7 @@ class CurrencyListViewController: UIViewController {
     let disposeBag = DisposeBag()
     let indicatorView = IndicatorView()
     var delegate : CurrenciesConvertDelegate?
+    var sourceConvertionCode: String!
     
     override func viewDidLoad() {
         
@@ -112,8 +113,12 @@ extension CurrencyListViewController: UITableViewDataSource, UITableViewDelegate
         let key = curencyListViewModel.sectionTitles[indexPath.section]
         if let sectinValues = curencyListViewModel.currenciesDictionary[key] {
             let currency = sectinValues[indexPath.row].currency
-            self.delegate?.source(value: currency)
-            self.dismiss(animated: true, completion: nil)
+            if currency == sourceConvertionCode {
+                ToastView().showToast(view: view, message: Const.sameConvertionType)
+            } else {
+                self.delegate?.source(value: currency)
+                self.dismiss(animated: true, completion: nil)
+            }
         }
     }
 }
