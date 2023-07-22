@@ -22,6 +22,8 @@
 	<string>ca-app-pub-1668811522927993~4900544754</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>This permission is required in order to serve proper advertising.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
