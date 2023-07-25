@@ -25,38 +25,41 @@ class ConvertViewModel {
         return Observable<Bool>.create { observable in
             var fromValue = String()
             var toValue = String()
-            var amount = String()
+            var amount: Double = 0
             for currency in self.currencyName {
                 if self.currencyName[self.inputValueTag] == currency {
                     fromValue = currency
-                    amount = self.currencyValue[self.inputValueTag]
+                    amount = Double(self.currencyValue[self.inputValueTag]) ?? 0
                 } else {
                     toValue = currency
                 }
             }
             
-            CurrencylayerAPIClien().requestCurrencyConvert(from: fromValue, to: toValue, amount: amount) { success, convert, error in
+            CurrencylayerAPIClien().requestCurrencyConvert(from: fromValue, to: toValue, amount: amount) { success, result, error in
                 if success {
-                    if let conertValue = convert {
+                    if let result = result {
                         if self.inputValueTag == 0 {
-                            self.currencyValue[1] = String(conertValue.result)
+                            self.currencyValue[1] = String(result)
                         } else {
-                            self.currencyValue[0] = String(conertValue.result)
+                            self.currencyValue[0] = String(result)
                         }
-                        self.convert = conertValue
                         DispatchQueue.main.async {
-                            CoreDataClient.shared.createConvertion(dateTime: Date(timeIntervalSince1970: TimeInterval(conertValue.info.timestamp)),
-                                                                    baseKeyName: conertValue.query.from,
-                                                                    baseValue: conertValue.query.amount,
-                                                                    targetKeyName: conertValue.query.to,
-                                                                    targetValue: conertValue.result)
+                            CoreDataClient.shared.createConvertion(dateTime: Date(),
+                                                                    baseKeyName: fromValue,
+                                                                    baseValue: amount,
+                                                                    targetKeyName: toValue,
+                                                                    targetValue: result)
                         }
                         observable.onNext(true)
                     } else {
                         observable.onNext(false)
                     }
                 } else {
-                    observable.onError(error! as! Error)
+                    if let error = error {
+                        observable.onError(error as! Error)
+                    } else {
+                        observable.onError(NSError(domain: "", code: -1, userInfo: nil))
+                    }
                 }
             }
             return Disposables.create()

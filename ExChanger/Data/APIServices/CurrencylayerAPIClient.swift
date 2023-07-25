@@ -12,49 +12,27 @@ class CurrencylayerAPIClien {
     
     let session = URLSession.shared
     
-    // Base Url
-    let baseUrl = "https://api.currencylayer.com"
-    
-    // Access Key
-    var accessKey = "fd6e151011f93dc8fbee0ab2f8c2167b"
-    
     func requestCurrences(_ completionHandler: @escaping (_ success: Bool, _ quotes: [Currencies]?, _ error: String?) -> Void) {
         if Reachability.isConnectedToNetwork() {
-            let fullUrl = "\(baseUrl)/\(Paths.list)"
             
-            guard var components = URLComponents(string: fullUrl) else { return }
-            
-            components.queryItems = [
-                URLQueryItem(name: "access_key", value: accessKey),
-                URLQueryItem(name: "format", value: "1")
-            ]
-            
-//            print(components.url as Any)
-            
-            let request = URLRequest(url: components.url!)
-            
+            let fullUrl = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies.json"
+            guard let url = URL(string: fullUrl) else { return }
+            let request = URLRequest(url: url)
             let task = session.dataTask(with: request, completionHandler: { data, response, error in
-                if error != nil {
-                    completionHandler(false, nil, error!.localizedDescription)
-                }
-                else {
+                if let error = error {
+                    completionHandler(false, nil, error.localizedDescription)
+                } else if let data = data {
                     do {
-                        let result = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                        if let dictionary = result["currencies"] as! [String : AnyObject]? {
-                            var currencyList = [Currencies]()
-                            for key in dictionary.keys.sorted() {
-                                currencyList.append(Currencies(currency: key, countryName: dictionary[key] as! String))
-                            }
-                            completionHandler(true, currencyList, nil)
+                        let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: AnyObject]
+                        var currencyList = [Currencies]()
+                        for key in result.keys.sorted() {
+                            currencyList.append(Currencies(currency: key, countryName: result[key] as! String))
                         }
-                        else {
-                            completionHandler(false, nil, nil)
-                        }
+                        completionHandler(true, currencyList, nil)
                     } catch {
                         completionHandler(false, nil, "Unable to process retrieved data.")
                     }
                 }
-                
             })
             task.resume()
         }
@@ -65,42 +43,27 @@ class CurrencylayerAPIClien {
     
     func requestCurrencyLive(source: String, completionHandler: @escaping (_ success: Bool, _ quotes: [Quotes]?, _ error: String?) -> Void) {
         if Reachability.isConnectedToNetwork() {
-            let fullUrl = "\(baseUrl)/\(Paths.live)"
             
-            guard var components = URLComponents(string: fullUrl) else { return }
-            
-            components.queryItems = [
-                URLQueryItem(name: "access_key", value: accessKey),
-                URLQueryItem(name: "source", value: source),
-                URLQueryItem(name: "format", value: "1")
-            ]
-            
-//            print(components.url as Any)
-            
-            let request = URLRequest(url: components.url!)
-            
+            let fullUrl = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/\(source.lowercased()).json"
+            guard let url = URL(string: fullUrl) else { return }
+            let request = URLRequest(url: url)
             let task = session.dataTask(with: request, completionHandler: { data, response, error in
-                if error != nil {
-                    completionHandler(false, nil, error!.localizedDescription)
-                }
-                else {
+                if let error = error {
+                    completionHandler(false, nil, error.localizedDescription)
+                } else if let data = data {
                     do {
-                        let result = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
-                        if let dictionary = result["quotes"] as! [String : AnyObject]? {
-                            var currencyList = [Quotes]()
-                            for key in dictionary.keys {
-                                currencyList.append(Quotes(currency: key, rate: dictionary[key] as! Double))
+                        let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: AnyObject]
+                        var currencyList = [Quotes]()
+                        if let usdRates = result[source.lowercased()] as? [String: Double] {
+                            for (currency, rate) in usdRates {
+                                currencyList.append(Quotes(currency: currency, rate: rate))
                             }
-                            completionHandler(true, currencyList, nil)
                         }
-                        else {
-                            completionHandler(false, nil, nil)
-                        }
+                        completionHandler(true, currencyList, nil)
                     } catch {
                         completionHandler(false, nil, "Unable to process retrieved data.")
                     }
                 }
-                
             })
             task.resume()
         }
@@ -109,46 +72,32 @@ class CurrencylayerAPIClien {
         }
     }
     
-    func requestCurrencyConvert(from: String, to: String, amount: String, completionHandler: @escaping (_ success: Bool, _ quotes: Convert?, _ error: String?) -> Void) {
+    func requestCurrencyConvert(from: String, to: String, amount: Double, completionHandler: @escaping (_ success: Bool, _ result: Double?, _ error: String?) -> Void) {
         if Reachability.isConnectedToNetwork() {
-            let fullUrl = "\(baseUrl)/\(Paths.convert)"
             
-            guard var components = URLComponents(string: fullUrl) else { return }
-            
-            components.queryItems = [
-                URLQueryItem(name: "access_key", value: accessKey),
-                URLQueryItem(name: "from", value: from),
-                URLQueryItem(name: "to", value: to),
-                URLQueryItem(name: "amount", value: amount),
-                URLQueryItem(name: "format", value: "1")
-            ]
-            
-//            print(components.url as Any)
-            
-            let request = URLRequest(url: components.url!)
-            
+            let fullUrl = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/\(from.lowercased())/\(to.lowercased()).json"
+            guard let url = URL(string: fullUrl) else { return }
+            let request = URLRequest(url: url)
             let task = session.dataTask(with: request, completionHandler: { data, response, error in
-                if error != nil {
-                    completionHandler(false, nil, error!.localizedDescription)
-                }
-                else {
+                if let error = error {
+                    completionHandler(false, nil, error.localizedDescription)
+                } else if let data = data {
                     do {
-                        if let data = data {
-                            let convertResult = try JSONDecoder().decode(Convert.self, from: data)
-                            completionHandler(true, convertResult, nil)
+                        let result = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: AnyObject]
+                        if let rate = result[to.lowercased()] as? Double {
+                            let convertedAmount = amount * rate
+                            completionHandler(true, convertedAmount, nil)
                         } else {
-                            completionHandler(false, nil, nil)
+                            completionHandler(false, nil, "Unable to convert currency.")
                         }
                     } catch {
                         completionHandler(false, nil, "Unable to process retrieved data.")
                     }
                 }
-                
             })
             task.resume()
-        }
-        else {
-            completionHandler(false, nil, "Please check you internet connection and try again.")
+        } else {
+            completionHandler(false, nil, "Please check your internet connection and try again.")
         }
     }
 }
